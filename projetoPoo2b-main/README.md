@@ -1,6 +1,6 @@
 # Mapeamento Objeto-Relacional com Spring Data JPA
 
-##  Componentes da Dupla
+##  Dupla
 * Vitor de Lima
 * Vito Zanata
 
