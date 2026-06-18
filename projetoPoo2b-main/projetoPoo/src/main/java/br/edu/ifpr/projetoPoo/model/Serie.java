@@ -16,4 +16,11 @@ public class Serie extends Conteudo {
         super(id, titulo);
     }
 
+    public List<Episodio> getEpisodios() {
+        return episodios;
+    }
+
+    public void setEpisodios(List<Episodio> episodios) {
+        this.episodios = episodios;
+    }
 }

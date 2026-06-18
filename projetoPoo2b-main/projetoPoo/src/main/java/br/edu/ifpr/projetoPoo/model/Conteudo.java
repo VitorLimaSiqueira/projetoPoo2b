@@ -13,11 +13,13 @@ public class Conteudo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
+    @OneToMany(mappedBy = "conteudo")
+    private List<Avaliacao> avaliacoes;
 
     @ManyToMany
-    @JoinTable(name = "conteudo_categoria", // Nome da tabela intermediária que o MySQL vai criar
-            joinColumns = @JoinColumn(name = "conteudo_id"), // Chave primária de Conteudo
-            inverseJoinColumns = @JoinColumn(name = "categoria_id") // Chave primária de Categoria
+    @JoinTable(name = "conteudo_categoria", 
+            joinColumns = @JoinColumn(name = "conteudo_id"),
+            inverseJoinColumns = @JoinColumn(name = "categoria_id")
     )
     private List<Categoria> categorias;
 
@@ -43,6 +45,14 @@ public class Conteudo {
     public Conteudo(Long id, String titulo) {
         this.id = id;
         this.titulo = titulo;
+    }
+
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes;
+    }
+
+    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
     }
 
 }

@@ -15,7 +15,15 @@ public class Perfil {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
+    @OneToMany(mappedBy = "perfil")
+    private List<Avaliacao> avaliacoes;
+
     public Perfil() {
+    }
+
+    public Perfil(Long id, String apelido) {
+        this.id = id;
+        this.apelido = apelido;
     }
 
     public Long getId() {
@@ -37,5 +45,13 @@ public class Perfil {
     public Perfil(Long id, String apelido) {
         this.id = id;
         this.apelido = apelido;
+    }
+    
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes;
+    }
+
+    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
     }
 }

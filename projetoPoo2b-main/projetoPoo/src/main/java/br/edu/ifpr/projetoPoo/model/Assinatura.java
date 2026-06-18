@@ -8,16 +8,16 @@ public class Assinatura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String titulo;
+    private String plano;
     @OneToOne(mappedBy = "assinatura")     
     private Usuario usuario;
 
     public Assinatura() {
     }
 
-    public Assinatura(Long id, String titulo) {
+    public Assinatura(Long id, String plano) {
         this.id = id;
-        this.titulo = titulo;
+        this.plano = plano;
     }
 
     public Long getId() {
@@ -28,11 +28,19 @@ public class Assinatura {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getPlano() {
+        return plano;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setPlano(String plano) {
+        this.plano = plano;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+    
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
